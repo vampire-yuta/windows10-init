@@ -116,12 +116,24 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# go env
+#export GOENV_ROOT=$HOME/.goenv
+#export PATH=$GOENV_ROOT/bin:$PATH
+#eval "$(goenv init -)"
+source /usr/share/bash-completion/completions/git
+
+# Docker
+export DOCKER_HOST=tcp://localhost:2375
+alias drm='sudo  docker rm $(sudo docker ps -aq)'
+
 #exec $SHELL
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
-source /home/yuta/.git_completion/contrib/completion/git-completion.bash
+#source /home/yuta/.git_completion/contrib/completion/git-completion.bash
 
-#alias pbcopy='xsel --clipboard --input'
 alias pbcopy='clip.exe'
+source ~/.git-prompt.sh
 
-cd ~
+# AWS CLI completer
+# https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
+complete -C '/usr/local/bin/aws_completer' aws
