@@ -20,3 +20,7 @@ chmod a+x ~/.git-completion.bash
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
 chmod a+x ~/.git-prompt.sh
 ```
+
+```
+git clone https://github.com/syndbg/goenv.git ~/.goenv
+```
