@@ -128,7 +128,7 @@ source /usr/share/bash-completion/completions/git
 
 # AWS CLI completer
 # https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
-complete -C '/usr/local/bin/aws_completer' aws
+complete -C '/usr/bin/aws_completer' aws
 
 # Xserver
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
@@ -142,9 +142,10 @@ alias goland=~/.local/share/JetBrains/Toolbox/apps/Goland/ch-0/202.6397.65/bin/g
 alias d='docker'
 alias dc='docker-compose'
 alias dpr='docker ps -aq | xargs docker rm -f'
+alias dir='docker images -aq | xargs docker rmi'
 
 # GO
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/go
 export GOENV_ROOT=$HOME/.goenv
 export PATH=$GOENV_ROOT/bin:$PATH
 eval "$(goenv init -)"
