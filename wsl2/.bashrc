@@ -159,6 +159,10 @@ export PATH="$HOME/.tfenv/bin:$PATH"
 source $HOME/.git-completion.bash
 source $HOME/.git-prompt.sh
 
+# Kubernetes
+alias k='kubectl'
+source <(kubectl completion bash)
+
 # プロンプトに各種情報を表示
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUPSTREAM=1
