@@ -154,6 +154,10 @@ export PATH=$PATH:/usr/local/go/bin
 
 # Terraform
 export PATH="$HOME/.tfenv/bin:$PATH"
+alias tf="terraform"
+alias tfp="terraform plan"
+alias tfv="terraform validate"
+alias tff="terraform fmt -recursive"
 
 # スクリプト読み込み
 source $HOME/.git-completion.bash
