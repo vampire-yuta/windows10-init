@@ -15,5 +15,9 @@ completion:
 golang:
 	git clone https://github.com/syndbg/goenv.git ~/.goenv
 
+xinput:
+	sudo apt install -y xinput
+
+
 init:
 	source ~/.bashrc
