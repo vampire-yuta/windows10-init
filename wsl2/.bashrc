@@ -195,3 +195,4 @@ export NVM_DIR="$HOME/.nvm"
 # Disable Center Click
 export DISPLAY=:0
 xinput set-button-map "TPPS/2 Elan TrackPoint" 1 0 3 4 5 6 7
+xinput set-button-map 8 1 0 3 4 5 6 7
