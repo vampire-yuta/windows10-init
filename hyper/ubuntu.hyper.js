@@ -167,6 +167,7 @@ module.exports = {
     'hyper-tab-icons',
     'hyper-ayu',
     'hyper-opacity',
+    'hyper-search',
   ],
 
   // in development, you can create a directory under
