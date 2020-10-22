@@ -2,7 +2,7 @@
 
 [SakuraColor]
 C[BRC]=0,1,000080,f0fbff,0
-C[CAR]=1,0,000000,f0fbff,0
+C[CAR]=1,0,0000ff,f0fbff,0
 C[CBK]=0,0,000000,80ffff,0
 C[CMT]=1,0,008000,f0fbff,0
 C[CTL]=1,0,00ffff,f0fbff,0
@@ -52,7 +52,7 @@ C[SEL]=1,0,c56a31,c56a31,0
 C[SPC]=0,0,c0c0c0,f0fbff,0
 C[SQT]=0,0,808040,f0fbff,0
 C[TAB]=1,0,808080,f0fbff,0
-C[TXT]=1,0,f0fbff,000000,0
+C[TXT]=1,0,00ff00,000000,0
 C[UND]=1,0,ff0000,f0fbff,0
 C[URL]=1,0,ff0000,f0fbff,1
 C[VER]=0,0,c0c0c0,f0fbff,0
