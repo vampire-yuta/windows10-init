@@ -16,8 +16,9 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=1000000
+HISTFILESIZE=2000000
+HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -142,7 +143,7 @@ alias goland=~/.local/share/JetBrains/Toolbox/apps/Goland/ch-0/202.6397.65/bin/g
 alias d='docker'
 alias dc='docker-compose'
 alias dpr='docker ps -aq | xargs docker rm -f'
-alias dir='docker images -aq | xargs docker rmi'
+alias dir='docker images -aq | xargs docker rmi -f'
 
 # GO
 export GOPATH=$HOME/go
@@ -195,4 +196,7 @@ export NVM_DIR="$HOME/.nvm"
 # Disable Center Click
 export DISPLAY=:0
 xinput set-button-map "TPPS/2 Elan TrackPoint" 1 0 3 4 5 6 7
-xinput set-button-map 8 1 0 3 4 5 6 7
+
+
+# Openvpn
+alias vpn='cd ~ ; sudo openvpn --config crafts.ovpn'
