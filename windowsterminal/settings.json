@@ -8,7 +8,8 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
 
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    // "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
 
     // You can add more global application settings here.
     // To learn more about global settings, visit https://aka.ms/terminal-global-settings
@@ -33,16 +34,18 @@
         [
             {
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "name": "Ubuntu",
                 "hidden": false,
-                "name": "Ubuntu-20.04",
                 "source": "Windows.Terminal.Wsl",
-                "commandline": "wsl.exe ~ -d Ubuntu", // ★ ~ を付けるのがポイント★
+                // "commandline": "wsl.exe ~ -d Ubuntu" // ★ ~ を付けるのがポイント★
                 // "backgroundImage": "C:\\Windows\\Web\\Wallpaper\\Windows\\img0.jpg", // ★Windows10のデスクトップ画像を指定★
                 "backgroundImageOpacity": 0.5, // ★背景画像の透明度を0-1の範囲で指定★
                 "colorScheme": "One Half Dark", // ★カラースキーム名を指定★
                 "useAcrylic": false, // ★ウィンドウ背後にあるコンテンツが透過するかどうか★
                 "multiLinePasteWarning": false, // デフォルトは true
-                "largePasteWarning": false // デフォルトは true
+                "largePasteWarning": false, // デフォルトは true
+                "startingDirectory" : "//wsl$/Ubuntu/home/yuta"
+
             },
             {
                 // Make changes here to the powershell.exe profile.
