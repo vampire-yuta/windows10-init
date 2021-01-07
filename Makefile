@@ -4,7 +4,7 @@
 all: packages nvm completion golang kubectl aws terraform
 
 packages:
-	sudo apt-get -y install unzip wget xinput net-tools azure-cli
+	sudo apt-get -y install unzip wget xinput net-tools azure-cli peco
 
 nvm:
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
@@ -19,10 +19,11 @@ golang:
 	git clone https://github.com/syndbg/goenv.git ~/.goenv
 
 kubectl:
-	curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-	chmod +x ./kubectl
-	sudo mv ./kubectl /usr/local/bin/kubectl
-	kubectl version --client
+	sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2
+	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+	echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+	sudo apt-get update
+	sudo apt-get install -y kubectl
 
 aws:
 	curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
