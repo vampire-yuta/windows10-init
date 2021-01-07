@@ -15,10 +15,16 @@
     // To learn more about global settings, visit https://aka.ms/terminal-global-settings
 
     // If enabled, selections are automatically copied to your clipboard.
-    "copyOnSelect": false,
+    "copyOnSelect": true,
 
     // If enabled, formatted data is also copied to your clipboard
-    "copyFormatting": false,
+    "copyFormatting": true,
+
+    "requestedTheme": "dark",
+    "snapToGridOnResize": true,
+    "tabWidthMode": "equal",
+ 
+    "wordDelimiters": " ()\"',;<>|[]{}│",
 
     // A profile specifies a command to execute paired with information about how it should look and feel.
     // Each one of them will appear in the 'New Tab' dropdown,
@@ -45,7 +51,6 @@
                 "multiLinePasteWarning": false, // デフォルトは true
                 "largePasteWarning": false, // デフォルトは true
                 "startingDirectory" : "//wsl$/Ubuntu/home/yuta"
-
             },
             {
                 // Make changes here to the powershell.exe profile.
@@ -92,6 +97,10 @@
         // - "split": "auto" makes this pane open in the direction that provides the most surface area.
         // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
         // To learn more about panes, visit https://aka.ms/terminal-panes
-        { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" }
+        { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
+
+        // Command Pallet
+        { "command": "commandPalette", "keys": "ctrl+shift+p" }
+
     ]
 }
