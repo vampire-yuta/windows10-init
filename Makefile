@@ -19,11 +19,10 @@ golang:
 	git clone https://github.com/syndbg/goenv.git ~/.goenv
 
 kubectl:
-	sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2
-	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-	echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-	sudo apt-get update
-	sudo apt-get install -y kubectl
+	curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+	chmod +x ./kubectl
+	sudo mv ./kubectl /usr/local/bin/kubectl
+	kubectl version --client
 
 aws:
 	curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -39,3 +38,28 @@ eksctl:
 terraform:
 	git clone https://github.com/tfutils/tfenv.git ~/.tfenv
 
+docker:
+	sudo apt-get -y remove docker docker-engine docker.io containerd runc
+	sudo apt-get -y update
+	sudo apt-get -y install \
+	    apt-transport-https \
+	    ca-certificates \
+	    curl \
+	    gnupg-agent \
+	    software-properties-common
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	sudo add-apt-repository \
+	   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+	   $(lsb_release -cs) \
+	   stable"
+	sudo apt-get -y update
+	sudo apt-get -y install docker-ce docker-ce-cli containerd.io
+	apt-cache madison docker-ce
+	sudo apt-get -y install docker-ce=5:19.03.13~3-0~ubuntu-bionic docker-ce-cli=5:19.03.13~3-0~ubuntu-bionic containerd.io
+	sudo groupadd docker
+	sudo usermod -a -G docker $USER
+	
+docker-compose:
+	sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
+	
