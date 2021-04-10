@@ -20,3 +20,4 @@ alias tf="terraform"
 alias tfp="terraform plan"
 alias tfv="terraform validate"
 alias tff="terraform fmt -recursive"
+azure --completion-fish | source

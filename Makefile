@@ -68,3 +68,4 @@ fish:
 	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 	fisher install evanlucas/fish-kubectl-completions
 	fisher install dracula/fish
+	sudo npm install -g azure-cli
