@@ -62,10 +62,16 @@ docker:
 docker-compose:
 	sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 	sudo chmod +x /usr/local/bin/docker-compose
-	
 
 fish:
 	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 	fisher install evanlucas/fish-kubectl-completions
 	fisher install dracula/fish
+	fisher install jorgebucaran/fisher
+	fisher install evanlucas/fish-kubectl-completions
+	fisher install 0rax/fish-bd
+	fisher install oh-my-fish/plugin-peco
+	fisher install oh-my-fish/theme-bobthefish
+	fisher install dracula/fish
+	cp -pr ~/.config/fish/config.fish .
 	sudo npm install -g azure-cli
